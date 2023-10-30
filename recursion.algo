@@ -1,0 +1,46 @@
+ALGORITHM recursioncheckpoint
+VAR
+    word: STRING
+    reverseWord: STRING
+BEGIN
+
+    Read(string)
+    // call the function to reverse the word and save it in a variable named reverse word
+    reverseWord = reverseWord(word)
+
+
+    // compare the ending character in each word against the other
+    IF (word[word.length -1]) == reverseWord[reverseWord.length -1 ]) THEN
+
+    // compare the reVerse string against each other to check if the word is a palindrome not any string less than 2 is a palindrome
+        IF (word==reverseWord OR word < 2) THEN
+            Write('it is a palidrome')
+
+        ELSE
+            Write('it is not a pallidrome')
+
+        END_IF
+
+    // if ending characters are not the same,, not a aplindrome
+    ELSE
+        Write('it is not a pallidrome')
+
+    END_IF
+
+
+
+END
+
+
+FUNCTION reverseWord(word:STRING) : STRING
+VAR
+    string2 : STRING :=''
+BEGIN
+    // reverse the word begining at the last character
+    FOR i FROM word.length -1 TO 0  STEP 1  DO
+        string2 = word[i]
+    END_FOR
+
+    // return the reverse string
+    RETURN string2 ;
+END
